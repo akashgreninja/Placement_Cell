@@ -140,7 +140,7 @@ class _FacilitiesState extends State<Facilities> {
                             });
                           },
                           child: Text(
-                            'Facilities',
+                            'Facilities and\nObjectives',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[1]
                                     ? Colors.white
@@ -183,7 +183,7 @@ class _FacilitiesState extends State<Facilities> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Gallery');
+                            Navigator.pushNamed(context, '/Company');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -191,7 +191,7 @@ class _FacilitiesState extends State<Facilities> {
                             });
                           },
                           child: Text(
-                            'Gallery',
+                            'Company\nDetails',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[3]
                                     ? Colors.white
@@ -523,12 +523,15 @@ class _FacilitiesState extends State<Facilities> {
 
 
 
+
+
                             ],
                           ),
+                          SizedBox(height: 50,),
 
-                          Text('Seminar Hall',style:GoogleFonts.lato(fontSize: 30,letterSpacing: 2.0,color: Colors.blue,fontWeight: FontWeight.bold),),
 
-                          SizedBox(height: 0.0),
+
+
                           // Container(
                           //   color: Colors.blue,
                           //   padding: EdgeInsets.symmetric(
@@ -865,7 +868,20 @@ class _FacilitiesState extends State<Facilities> {
 
                         ],
                       ),
+
                     ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(60, 5, 5, 5),
+                        child: Text("Objectives :-",style: TextStyle(
+                          fontSize: 70,decoration: TextDecoration.underline,
+                        ),),
+                      ),
+                    ],
+                  ),
+
 
                   Footer()
                 ],

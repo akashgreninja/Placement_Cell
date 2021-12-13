@@ -135,7 +135,7 @@ class _RotaryState extends State<Rotary> {
                               });
                             },
                             child: Text(
-                              'Facilities \nand Placements',
+                              'Facilities &\nObjectives',
                               style: GoogleFonts.aBeeZee(
                                   color: _isHovering[1]
                                       ? Colors.white
@@ -178,7 +178,7 @@ class _RotaryState extends State<Rotary> {
                           SizedBox(width: screenSize.width / 20),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/Gallery');
+                              Navigator.pushNamed(context, '/Company');
                             },
                             onHover: (ishoverd) {
                               setState(() {
@@ -186,7 +186,7 @@ class _RotaryState extends State<Rotary> {
                               });
                             },
                             child: Text(
-                              'Gallery',
+                              'Company\nDetails',
                               style: GoogleFonts.aBeeZee(
                                   color: _isHovering[3]
                                       ? Colors.white
@@ -467,36 +467,33 @@ class _RotaryState extends State<Rotary> {
                               //fit: BoxFit.contain, width: 450.0, scale: 0.01),
                           SizedBox(height: 0.0),
                           Container(
-                            color: Theme.of(context).buttonColor,
+                            color: Color.fromRGBO(42, 42, 114,0.9 ),
                             padding: EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 11.0),
                             child: FlatButton(
                               onPressed: () {
                                 Navigator.pushNamed(context, '/Stats');
                               },
-                              child: Text(
-                                'Press here to know about our Placement Statistics',
-                                style: TextStyle(
-                                    // color: themeChange.darkTheme
-                                    //     ? Colors.orange
-                                    //     : Color(0xff3B3B3B),
-                                    fontSize: 40.0,
+                              child: Text(String.fromCharCode(0x2022) +'Press here to know about our Placement Statistics',
+                                style: GoogleFonts.aBeeZee(
+                                    color: Colors.blue,
+                                    fontSize: 30.0,
                                     letterSpacing: 0.5,decoration: TextDecoration.underline),
                               ),
                             ),
                             
                           ),
-                          Material(
-                            child: InkWell(
-                              onTap: () {},
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20.0),
-                                child: Image.asset('placementgraph.jpg',
-                                    ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 50.0),
+                          // Material(
+                          //   child: InkWell(
+                          //     onTap: () {},
+                          //     child: ClipRRect(
+                          //       borderRadius: BorderRadius.circular(20.0),
+                          //       child: Image.asset('placementgraph.jpg',
+                          //           ),
+                          //     ),
+                          //   ),
+                          // ),
+                          SizedBox(height: 30.0),
                           // Text(
                           //     'Rotary was founded in the early 1900s in Chicago Illinois by Paul Harris. The origin of the name is that the meetings would rotate between the Members of individual offices, once the club became too big for this they chose a permanent location for their meetings. Rotary is divided into a federalist or charter system with 35,000 clubs that meet every week all around the world; 530 districts that manage individual clubs, charter new ones, and maintain the link between Rotary International and the clubs. Moreover, there are 34 zones that break up the world in manageable chunks and help with some of the international functions as well as the infrastructure needed by the districts and clubs.',
                           //     style: GoogleFonts.poppins(
@@ -511,28 +508,68 @@ class _RotaryState extends State<Rotary> {
                           // Image.asset('rbse_logo.png',
                           //     width: 450.0, fit: BoxFit.contain, scale: 0.01),
                           Container(
-                            color: Theme.of(context).buttonColor,
+                            color: Color.fromRGBO(42, 42, 114,0.9 ),
                             padding: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 11.0),
+                                vertical: 11.0, horizontal: 11.0),
                             child: FlatButton(
                               onPressed: () {
 
                               },
-                              child: Text(
-                                'Our Alumani Feedback ',
-                                style: TextStyle(
-                                  fontFamily: 'Bahnschrift',
+                              child: Text(String.fromCharCode(0x2022) + 'Our Alumani Feedback ',
+                                style: GoogleFonts.aBeeZee(
+
                                   //sans can also be tried
-                                  fontSize: 20.0,
+                                  fontSize: 30.0,
                                   letterSpacing: 0.5,
-                                  color: themeChange.darkTheme
-                                      ? Colors.orange
-                                      : Color(0xff3B3B3B),
+                                  color: Colors.blue,decoration: TextDecoration.underline,
                                 ),
                               ),
                             ),
+
                           ),
-                          SizedBox(height: 50.0),
+
+                          SizedBox(height: 30.0),
+                          Container(
+                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 11.0, horizontal: 11.0),
+                            child: FlatButton(
+                              onPressed: () {
+
+                              },
+                              child: Text(String.fromCharCode(0x2022) + 'Placement Team ',
+                                style: GoogleFonts.aBeeZee(
+
+                                  //sans can also be tried
+                                  fontSize: 30.0,
+                                  letterSpacing: 0.5,
+                                  color: Colors.blue,decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(height: 30.0),
+                          Container(
+                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 11.0, horizontal: 11.0),
+                            child: FlatButton(
+                              onPressed: () {
+
+                              },
+                              child: Text(String.fromCharCode(0x2022) + 'Resources For Students',
+                                style: GoogleFonts.aBeeZee(
+
+                                  //sans can also be tried
+                                  fontSize: 30.0,
+                                  letterSpacing: 0.5,
+                                  color: Colors.blue,decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+
+                          ),
                           // Text(
                           //     "Rotary Bangalore Agneya (RBA) is a club under the umbrella of Rotary International, a non-profit organization. Rotary International is perhaps the largest collection of organized volunteers in the world. Rotary International is divided into districts, which are then sub-divided into clubs.\nRBSE was chartered in the year 2000 as a Rotary club, a mark to begin the millennium. The club today, has 30 members and over the years executed thousands of non-profit projects along with its various youth wings.\nCurrently, the youth wings under RBSE are:",
                           //     style: GoogleFonts.poppins(

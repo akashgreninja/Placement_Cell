@@ -3,7 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/Board/Gallery.dart';
+import 'package:rotaract_website/Board/Company.dart';
 import 'package:rotaract_website/Contact/Contact_us.dart';
 import 'package:rotaract_website/DashBoard/dashboard.dart';
 import 'package:rotaract_website/Event/Facilities.dart';
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
               '/': (context) => HomePage(),
               '/Placements': (context) => Rotary(),
               '/Facilities': (context) => Facilities(),
-              '/Gallery': (context) => Gallery(),
+              '/Company': (context) => Company(),
               '/contact_us': (context) => Contact_us(),
               '/register': (context) => Register(),
               '/login': (context) => SignIn(),

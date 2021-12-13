@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                                   });
                                 },
                                 child: Text(
-                                  'Facilities \nand Placements',
+                                  'Facilities &\nObjectives',
                                   style: GoogleFonts.aBeeZee(
                                       color: _isHovering[1]
                                           ? Colors.white
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(width: screenSize.width / 20),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushNamed(context, '/Gallery');
+                                  Navigator.pushNamed(context, '/Company');
                                 },
                                 onHover: (ishoverd) {
                                   setState(() {
@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                                   });
                                 },
                                 child: Text(
-                                  'Gallery',
+                                  'Company \nDetails',
                                   style: GoogleFonts.aBeeZee(
                                       color: _isHovering[3]
                                           ? Colors.white

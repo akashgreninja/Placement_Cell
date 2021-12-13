@@ -131,7 +131,7 @@ class _StatsState extends State<Stats> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/events');
+                            Navigator.pushNamed(context, '/Facilities');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -139,7 +139,7 @@ class _StatsState extends State<Stats> {
                             });
                           },
                           child: Text(
-                            'Events',
+                            'Facilities &\nObjectives',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[1]
                                     ? Colors.white
@@ -182,7 +182,7 @@ class _StatsState extends State<Stats> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Gallery');
+                            Navigator.pushNamed(context, '/Company');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -190,7 +190,7 @@ class _StatsState extends State<Stats> {
                             });
                           },
                           child: Text(
-                            'Gallery',
+                            'Company\nDetails',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[3]
                                     ? Colors.white

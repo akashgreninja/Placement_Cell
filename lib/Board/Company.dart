@@ -7,16 +7,16 @@ import 'package:rotaract_website/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-class Gallery extends StatefulWidget {
+class Company extends StatefulWidget {
 
 
   @override
-  _GalleryState createState() => _GalleryState();
+  _CompanyState createState() => _CompanyState();
 }
 
 
 
-class _GalleryState extends State<Gallery> {
+class _CompanyState extends State<Company> {
   ScrollController _scrollController;
   double _opacity = 0;
   double _scrollPosition = 0;
@@ -140,7 +140,7 @@ class _GalleryState extends State<Gallery> {
                             });
                           },
                           child: Text(
-                            'Facilities \nand Placements',
+                            'Facilities &\nObjectives',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[1]
                                     ? Colors.white
@@ -183,7 +183,7 @@ class _GalleryState extends State<Gallery> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Gallery');
+                            Navigator.pushNamed(context, '/Company');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -191,7 +191,7 @@ class _GalleryState extends State<Gallery> {
                             });
                           },
                           child: Text(
-                            'Gallery',
+                            'Company\nDetails',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[3]
                                     ? Colors.white
