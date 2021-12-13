@@ -466,27 +466,27 @@ class _GalleryState extends State<Gallery> {
                       ),
                     ],
                   ),
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: screenSize.height * 0.01,
-                          horizontal:
-                          isScreenSmall ? 16 : screenSize.width * 0.2),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Activities Conducted By the Department Of Training & Placement",
-                            style:GoogleFonts.lato(
-                              fontSize: 40,letterSpacing: 2.0,fontWeight: FontWeight.bold,decoration: TextDecoration.underline,
-                            ),),
-                          SizedBox(height: 60,),
-
-                          Center(
-                            child: Image.asset('pic1.jpg',
-                                fit: BoxFit.contain, width: 450.0, scale: 0.01),
-                          ),
-                          Center(child: Text("Pre-Placement Talk of Infosys",style:GoogleFonts.lato(fontSize: 20,letterSpacing: 2.0,color: Colors.blue),)),
-                          SizedBox(height: 0.0),
+                  // Center(
+                  //   child: Padding(
+                  //     padding: EdgeInsets.symmetric(
+                  //         vertical: screenSize.height * 0.01,
+                  //         horizontal:
+                  //         isScreenSmall ? 16 : screenSize.width * 0.2),
+                  //     child: Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: [
+                  //         Text("Activities Conducted By the Department Of Training & Placement",
+                  //           style:GoogleFonts.lato(
+                  //             fontSize: 40,letterSpacing: 2.0,fontWeight: FontWeight.bold,decoration: TextDecoration.underline,
+                  //           ),),
+                  //         SizedBox(height: 60,),
+                  //
+                  //         Center(
+                  //           child: Image.asset('pic1.jpg',
+                  //               fit: BoxFit.contain, width: 450.0, scale: 0.01),
+                  //         ),
+                  //         Center(child: Text("Pre-Placement Talk of Infosys",style:GoogleFonts.lato(fontSize: 20,letterSpacing: 2.0,color: Colors.blue),)),
+                  //         SizedBox(height: 0.0),
                           // Container(
                           //   color: Colors.blue,
                           //   padding: EdgeInsets.symmetric(
@@ -821,10 +821,10 @@ class _GalleryState extends State<Gallery> {
                           //             ? Colors.grey[400]
                           //             : Colors.grey[900])),
 
-                        ],
-                      ),
-                    ),
-                  ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   Footer()
                 ],
               ),
