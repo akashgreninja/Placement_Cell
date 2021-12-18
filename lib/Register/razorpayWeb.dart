@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:html';
 import 'dart:ui' as ui;
-import 'package:rotaract_website/services/Database.dart';
+import 'package:placement_original/services/Database.dart';
 //conditional import
-import 'package:rotaract_website/Register/fake_ui.dart'
+import 'package:placement_original/Register/fake_ui.dart'
     if (dart.library.html) 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
@@ -70,7 +70,7 @@ class _RazorPayWebState extends State<RazorPayWeb> {
                     'isDone': true,
                   })
                 : Navigator.pushNamed(context, '/register', arguments: {
-                    'hasError': false,
+                    'hasError': true,
                     'isDone': true,
                     'registration_id': registeration_id
                   }))

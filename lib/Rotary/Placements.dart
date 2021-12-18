@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/footer.dart';
-import 'package:rotaract_website/services/Database.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
+import 'package:placement_original/footer.dart';
+import 'package:placement_original/services/Database.dart';
+import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Rotary extends StatefulWidget {
@@ -467,7 +467,7 @@ class _RotaryState extends State<Rotary> {
                               //fit: BoxFit.contain, width: 450.0, scale: 0.01),
                           SizedBox(height: 0.0),
                           Container(
-                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+
                             padding: EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 11.0),
                             child: FlatButton(
@@ -508,7 +508,7 @@ class _RotaryState extends State<Rotary> {
                           // Image.asset('rbse_logo.png',
                           //     width: 450.0, fit: BoxFit.contain, scale: 0.01),
                           Container(
-                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+
                             padding: EdgeInsets.symmetric(
                                 vertical: 11.0, horizontal: 11.0),
                             child: FlatButton(
@@ -530,7 +530,7 @@ class _RotaryState extends State<Rotary> {
 
                           SizedBox(height: 30.0),
                           Container(
-                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+
                             padding: EdgeInsets.symmetric(
                                 vertical: 11.0, horizontal: 11.0),
                             child: FlatButton(
@@ -551,7 +551,7 @@ class _RotaryState extends State<Rotary> {
                           ),
                           SizedBox(height: 30.0),
                           Container(
-                            color: Color.fromRGBO(42, 42, 114,0.9 ),
+
                             padding: EdgeInsets.symmetric(
                                 vertical: 11.0, horizontal: 11.0),
                             child: FlatButton(

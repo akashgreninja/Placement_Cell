@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/Register/logIn.dart';
-import 'package:rotaract_website/footer.dart';
-import 'package:rotaract_website/services/Database.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
+import 'package:placement_original/Register/logIn.dart';
+import 'package:placement_original/footer.dart';
+import 'package:placement_original/services/Database.dart';
+import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DashBoard extends StatefulWidget {

@@ -4,10 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_web_scrollbar/flutter_web_scrollbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/footer.dart';
-import 'package:rotaract_website/home/imageCarousal.dart';
-import 'package:rotaract_website/services/Database.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
+import 'package:placement_original/footer.dart';
+import 'package:placement_original/home/imageCarousal.dart';
+import 'package:placement_original/services/Database.dart';
+import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,6 +55,8 @@ class _HomePageState extends State<HomePage> {
   List _isHovering = [false, false, false, false, false, false, false];
   bool isPopped = false;
 
+
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -91,257 +93,258 @@ class _HomePageState extends State<HomePage> {
       // extendBodyBehindAppBar: true,
       appBar: isScreenSmall
           ? AppBar(
-               title: Image.asset(
-                'bitlogo.png',
-                 fit: BoxFit.contain,
-                 height: screenSize.height * 0.08,
-               ),
-              backgroundColor: Colors.grey.withOpacity(_opacity),
-            )
+        title: Image.asset(
+          'bitlogo.png',
+          fit: BoxFit.contain,
+          height: screenSize.height * 0.08,
+        ),
+        backgroundColor: Colors.grey.withOpacity(_opacity),
+      )
           : PreferredSize(
-              preferredSize: Size(screenSize.width, screenSize.height * 0.15),
-              child: Card(
+        preferredSize: Size(screenSize.width, screenSize.height * 0.15),
+        child: Card(
 
-                elevation: 10,
+          elevation: 10,
 
-                // color: Color.fromRGBO(0, 51, 102, 0.9),
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end:Alignment.centerRight,
-                      colors: [
-                        Color.fromRGBO(0, 0, 0, 0.9),
-                        Color.fromRGBO(42, 42, 114,0.9 ),
-                      ]
-                    ),
-                  ),
+          // color: Color.fromRGBO(0, 51, 102, 0.9),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end:Alignment.centerRight,
+                  colors: [
+                    Color.fromRGBO(0, 0, 0, 0.9),
+                    Color.fromRGBO(42, 42, 114,0.9 ),
+                  ]
+              ),
+            ),
 
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 0, horizontal: screenSize.width * 0.1),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: 0, horizontal: screenSize.width * 0.1),
+              child: Row(
+                children: [
+                  Image.asset('bitlogo.png', height: 250.0),
+                  Expanded(
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('bitlogo.png', height: 250.0),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/');
-                                },
-                                onHover: (ishoverd) {
-                                  setState(() {
-                                    _isHovering[0] = ishoverd;
-                                  });
-                                },
-                                child: Text(
-                                  'Home',
-                                  style: GoogleFonts.aBeeZee(
-                                      color: _isHovering[0]
-                                          ? Colors.white
-                                          : Colors.white,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/');
+                          },
+                          onHover: (ishoverd) {
+                            setState(() {
+                              _isHovering[0] = ishoverd;
+                            });
+                          },
+                          child: Text(
+                            'Home',
+                            style: GoogleFonts.aBeeZee(
+                                color: _isHovering[0]
+                                    ? Colors.white
+                                    : Colors.white,
 
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
-                                      decoration: TextDecoration.underline),
-                                ),
-                              ),
-                              SizedBox(width: screenSize.width / 20),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/Facilities');
-                                },
-                                onHover: (ishoverd) {
-                                  setState(() {
-                                    _isHovering[1] = ishoverd;
-                                  });
-                                },
-                                child: Text(
-                                  'Facilities &\nObjectives',
-                                  style: GoogleFonts.aBeeZee(
-                                      color: _isHovering[1]
-                                          ? Colors.white
-                                          : Colors.white,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                              SizedBox(width: screenSize.width / 20),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/Placements');
-                                },
-                                onHover: (ishoverd) {
-                                  setState(() {
-                                    _isHovering[2] = ishoverd;
-                                  });
-                                },
-                                child:
-
-                                Text(
-                                  'Placements',
-                                  style: GoogleFonts.aBeeZee(
-                                      color: _isHovering[2]
-                                          ? Colors.white
-                                          : Colors.white,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600),
-
-
-                                ),
-
-                              ),
-
-                              IconButton(onPressed: () {
-                                Navigator.pushNamed(context, '/Stats');
-                              },
-
-                                  icon:Icon(Icons.arrow_drop_down)),
-                              SizedBox(width: screenSize.width / 20),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/Company');
-                                },
-                                onHover: (ishoverd) {
-                                  setState(() {
-                                    _isHovering[3] = ishoverd;
-                                  });
-                                },
-                                child: Text(
-                                  'Company \nDetails',
-                                  style: GoogleFonts.aBeeZee(
-                                      color: _isHovering[3]
-                                          ? Colors.white
-                                          : Colors.white,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600
-                                      //decoration: TextDecoration.underline
-                                      ),
-                                ),
-                              ),
-                              SizedBox(width: screenSize.width / 20),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/contact_us');
-                                },
-                                onHover: (ishoverd) {
-                                  setState(() {
-                                    _isHovering[4] = ishoverd;
-                                  });
-                                },
-                                child: Text(
-                                  'Contact Us',
-                                  style: GoogleFonts.aBeeZee(
-                                      color: _isHovering[4]
-                                          ? Colors.white
-                                          : Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18.0),
-                                ),
-                              )
-                            ],
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600,
+                                decoration: TextDecoration.underline),
                           ),
                         ),
-                        // themeChange.isSignedIn
-                        //     ? DropdownButton<String>(
-                        //         // value: themeChange.username!=null && !themeChange.username.isEmpty?themeChange.username:'Loading',
-                        //         iconSize: 0,
-                        //         value: "DashBoard",
-                        //         elevation: 8,
-                        //         underline: Container(
-                        //           height: 2,
-                        //           color: Colors.transparent,
-                        //         ),
-                        //         onChanged: (val) {
-                        //           setState(() {
-                        //             if (val.compareTo("Sign Out") == 0) {
-                        //               Database("", "", "", "", "", "")
-                        //                   .signOut();
-                        //               themeChange.username = "";
-                        //               themeChange.email = "";
-                        //               themeChange.isSignedIn = false;
-                        //             } else if (val.compareTo("DashBoard") == 0)
-                        //               Navigator.pushNamed(
-                        //                   context, '/dashboard');
-                        //           });
-                        //         },
-                        //         style: GoogleFonts.montserrat(
-                        //           color: Colors.orange,
-                        //         ),
-                        //         items: <String>[
-                        //           'DashBoard',
-                        //           'Sign Out'
-                        //         ].map<DropdownMenuItem<String>>((String value) {
-                        //           return DropdownMenuItem<String>(
-                        //             value: value,
-                        //             child: Text(value),
-                        //           );
-                        //         }).toList(),
-                        //       )
-                        //     : Row(
-                        //         children: [
-                        //           InkWell(
-                        //             onTap: () {
-                        //               _launchURL(
-                        //                   'https://rzp.io/l/rotaractRegistration');
-                        //             },
-                        //             onHover: (val) {
-                        //               setState(() {
-                        //                 _isHovering[5] = val;
-                        //               });
-                        //             },
-                        //             child: Text(
-                        //               "Register",
-                        //               style: GoogleFonts.openSans(
-                        //                   fontWeight: FontWeight.w400,
-                        //                   color: _isHovering[5]
-                        //                       ? Colors.pink
-                        //                       : Colors.orange,
-                        //                   fontSize: 17),
-                        //             ),
-                        //           ),
-                        //           SizedBox(
-                        //             width: screenSize.width * 0.01,
-                        //           ),
-                        //           InkWell(
-                        //             onTap: () {
-                        //               Navigator.pushNamed(context, '/login');
-                        //             },
-                        //             onHover: (val) {
-                        //               setState(() {
-                        //                 _isHovering[6] = val;
-                        //               });
-                        //             },
-                        //             child: Text(
-                        //               "Log In",
-                        //               style: GoogleFonts.openSans(
-                        //                   fontWeight: FontWeight.w400,
-                        //                   color: _isHovering[6]
-                        //                       ? Colors.pink
-                        //                       : Colors.orange,
-                        //                   fontSize: 17),
-                        //             ),
-                        //           ),
-                        //         ],
-                        //       ),
-                        // SizedBox(width: screenSize.width * 0.01),
-                        // IconButton(
-                        //   icon: Icon(Icons.brightness_medium,
-                        //       color: themeChange.darkTheme
-                        //           ? Colors.white
-                        //           : Colors.grey[400]),
-                        //   onPressed: () {
-                        //     themeChange.darkTheme = !themeChange.darkTheme;
-                        //   },
-                        // )
+                        SizedBox(width: screenSize.width / 20),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/events');
+                          },
+                          onHover: (ishoverd) {
+                            setState(() {
+                              _isHovering[1] = ishoverd;
+                            });
+                          },
+                          child: Text(
+                            'Facilities and\nObjectives',
+                            style: GoogleFonts.aBeeZee(
+                                color: _isHovering[1]
+                                    ? Colors.white
+                                    : Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        SizedBox(width: screenSize.width / 20),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/Placements');
+                          },
+                          onHover: (ishoverd) {
+                            setState(() {
+                              _isHovering[2] = ishoverd;
+                            });
+                          },
+                          child:
+
+                          Text(
+                            'Placements',
+                            style: GoogleFonts.aBeeZee(
+                                color: _isHovering[2]
+                                    ? Colors.white
+                                    : Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600),
+
+
+                          ),
+
+                        ),
+
+                        IconButton(onPressed: () {
+                          Navigator.pushNamed(context, '/Stats');
+                        },
+
+                            icon:Icon(Icons.arrow_drop_down)),
+                        SizedBox(width: screenSize.width / 20),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/Company');
+                          },
+                          onHover: (ishoverd) {
+                            setState(() {
+                              _isHovering[3] = ishoverd;
+                            });
+                          },
+                          child: Text(
+                            'Company\nDetails',
+                            style: GoogleFonts.aBeeZee(
+                                color: _isHovering[3]
+                                    ? Colors.white
+                                    : Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600
+                              //decoration: TextDecoration.underline
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: screenSize.width / 20),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/contact_us');
+                          },
+                          onHover: (ishoverd) {
+                            setState(() {
+                              _isHovering[4] = ishoverd;
+                            });
+                          },
+                          child: Text(
+                            'Contact Us',
+                            style: GoogleFonts.aBeeZee(
+                                color: _isHovering[4]
+                                    ? Colors.white
+                                    : Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0),
+                          ),
+                        )
                       ],
                     ),
                   ),
-                ),
+                  themeChange.isSignedIn
+                      ? DropdownButton<String>(
+                          // value: themeChange.username!=null && !themeChange.username.isEmpty?themeChange.username:'Loading',
+                          iconSize: 0,
+                          value: "DashBoard",
+                          elevation: 8,
+                          underline: Container(
+                            height: 2,
+                            color: Colors.transparent,
+                          ),
+                          onChanged: (val) {
+                            setState(() {
+                              if (val.compareTo("Sign Out") == 0) {
+                                Database("", "", "", "", "", "")
+                                    .signOut();
+                                themeChange.username = "";
+                                themeChange.email = "";
+                                themeChange.isSignedIn = false;
+                              } else if (val.compareTo("DashBoard") == 0)
+                                Navigator.pushNamed(
+                                    context, '/dashboard');
+                            });
+                          },
+                          style: GoogleFonts.montserrat(
+                            color: Colors.orange,
+                          ),
+                          items: <String>[
+                            'DashBoard',
+                            'Sign Out'
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        )
+                      : Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                _launchURL(
+                                    'https://rzp.io/l/rotaractRegistration');
+                              },
+                              onHover: (val) {
+                                setState(() {
+                                  _isHovering[5] = val;
+                                });
+                              },
+                              child: Text(
+                                "Register",
+                                style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.w400,
+                                    color: _isHovering[5]
+                                        ? Colors.pink
+                                        : Colors.orange,
+                                    fontSize: 17),
+                              ),
+                            ),
+                            SizedBox(
+                              width: screenSize.width * 0.01,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/login');
+                              },
+                              onHover: (val) {
+                                setState(() {
+                                  _isHovering[6] = val;
+                                });
+                              },
+                              child: Text(
+                                "Log In",
+                                style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.w400,
+                                    color: _isHovering[6]
+                                        ? Colors.pink
+                                        : Colors.orange,
+                                    fontSize: 17),
+                              ),
+                            ),
+                          ],
+                        ),
+                  SizedBox(width: screenSize.width * 0.01),
+                  IconButton(
+                    icon: Icon(Icons.brightness_medium,
+                        color: themeChange.darkTheme
+                            ? Colors.white
+                            : Colors.grey[400]),
+                    onPressed: () {
+                      themeChange.darkTheme = !themeChange.darkTheme;
+                    },
+                  )
+                ],
               ),
             ),
+          ),
+        ),
+      ),
+
       drawer: isScreenSmall
           ? Drawer(
               child: ListView(
@@ -452,9 +455,7 @@ class _HomePageState extends State<HomePage> {
             child: Opacity(
               opacity: 0.4,
 
-              // child: themeChange.darkTheme
-              //      ? Image.asset('roarlikeone.png')
-              //     : Image.asset('roarlikeone.png'),
+              child: Image.asset('college.jpg')
 
             ),
           ),

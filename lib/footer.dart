@@ -20,7 +20,7 @@ class _FooterState extends State<Footer> {
     var screenSize = MediaQuery.of(context).size;
     bool isScreenSmall = screenSize.width<800;
     return Container(
-      padding: EdgeInsets.all(30.0),
+      padding: EdgeInsets.all(5.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,

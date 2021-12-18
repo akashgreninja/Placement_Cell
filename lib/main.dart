@@ -3,21 +3,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/Board/Company.dart';
-import 'package:rotaract_website/Contact/Contact_us.dart';
-import 'package:rotaract_website/DashBoard/dashboard.dart';
-import 'package:rotaract_website/Event/Facilities.dart';
-import 'package:rotaract_website/Register/cybersec.dart';
-import 'package:rotaract_website/Register/logIn.dart';
-import 'package:rotaract_website/Register/razorpayWeb.dart';
-import 'package:rotaract_website/Rotary/Placements.dart';
-import 'package:rotaract_website/Rotary/prism.dart';
-import 'package:rotaract_website/home/Home.dart';
-import 'package:rotaract_website/home/homePage.dart';
-import 'package:rotaract_website/Register/register.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
-import 'package:rotaract_website/services/styles.dart';
-import 'package:rotaract_website/home/Stats.dart';
+import 'package:placement_original/Board/Company.dart';
+import 'package:placement_original/Contact/Contact_us.dart';
+import 'package:placement_original/DashBoard/dashboard.dart';
+import 'package:placement_original/Facilities/Facilities.dart';
+import 'package:placement_original/Register/cybersec.dart';
+import 'package:placement_original/Register/logIn.dart';
+import 'package:placement_original/Register/razorpayWeb.dart';
+import 'package:placement_original/Rotary/Placements.dart';
+import 'package:placement_original/Rotary/prism.dart';
+import 'package:placement_original/home/Home.dart';
+import 'package:placement_original/home/homePage.dart';
+import 'package:placement_original/Register/register.dart';
+import 'package:placement_original/services/sharedPref.dart';
+import 'package:placement_original/services/styles.dart';
+import 'package:placement_original/home/Stats.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
               '/register': (context) => Register(),
               '/login': (context) => SignIn(),
               '/dashboard': (context) => DashBoard(),
-              '/prism': (context) => Prism(),
+
               '/payment': (context) => RazorPayWeb(),
                '/cybersec': (context) => CyberSec(),
               '/Stats':(context) =>Stats(),

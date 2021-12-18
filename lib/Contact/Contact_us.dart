@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/footer.dart';
-import 'package:rotaract_website/services/Database.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
+import 'package:placement_original/footer.dart';
+import 'package:placement_original/services/Database.dart';
+import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contact_us extends StatefulWidget {
@@ -31,6 +31,9 @@ class _Contact_usState extends State<Contact_us> {
       throw 'Could not launch $url';
     }
   }
+
+
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -127,7 +130,7 @@ class _Contact_usState extends State<Contact_us> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Facilities');
+                            Navigator.pushNamed(context, '/events');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -135,7 +138,7 @@ class _Contact_usState extends State<Contact_us> {
                             });
                           },
                           child: Text(
-                            'Facilities &\nObjectives',
+                            'Facilities and\nObjectives',
                             style: GoogleFonts.aBeeZee(
                                 color: _isHovering[1]
                                     ? Colors.white
@@ -318,7 +321,8 @@ class _Contact_usState extends State<Contact_us> {
           ),
         ),
       ),
-      drawer:isScreenSmall
+
+      drawer: isScreenSmall
           ? Drawer(
               child: ListView(
                 // Important: Remove any padding from the ListView.

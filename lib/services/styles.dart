@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rotaract_website/services/sharedPref.dart';
+import 'package:placement_original/services/sharedPref.dart';
 
 abstract class Styles {
   // static DarkThemeProvider themeProvider = new DarkThemeProvider();
