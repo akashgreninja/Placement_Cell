@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
       appBar: isScreenSmall
           ? AppBar(
         title: Image.asset(
-          'title_logo.png',
+          'bitlogo.png',
           fit: BoxFit.contain,
           height: screenSize.height * 0.08,
         ),
@@ -91,16 +91,23 @@ class _RegisterState extends State<Register> {
         preferredSize:
         Size(screenSize.width, screenSize.height * 0.15),
         child: Card(
-          color: Colors.grey[900].withOpacity(_opacity),
+          // color: Colors.grey[900].withOpacity(_opacity),
           child: Container(
-            color: Colors.grey[900].withOpacity(_opacity),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromRGBO(0, 0, 0, 0.9),
+                  Color.fromRGBO(42, 42, 114,0.9 ),
+                ]
+              ),
+            ),
             child: Padding(
               padding: EdgeInsets.symmetric(
                   vertical: 20.0,
                   horizontal: screenSize.width * 0.1),
               child: Row(
                 children: [
-                  Image.asset('title_logo.png', height: 250.0),
+                  Image.asset('bitlogo.png', height: 250.0),
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -117,9 +124,7 @@ class _RegisterState extends State<Register> {
                           child: Text(
                             'Home',
                             style: TextStyle(
-                                color: _isHovering[0]
-                                    ? Colors.pink
-                                    : Colors.orange,
+                                color: Colors.white,
                                 fontFamily: 'Montserrat',
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600),
@@ -128,7 +133,7 @@ class _RegisterState extends State<Register> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/events');
+                            Navigator.pushNamed(context, '/Facilities');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -136,11 +141,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           child: Text(
-                            'Events',
+                            'Facilities',
                             style: TextStyle(
-                                color: _isHovering[1]
-                                    ? Colors.pink
-                                    : Colors.orange,
+                                color: Colors.white,
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600),
                           ),
@@ -148,7 +151,7 @@ class _RegisterState extends State<Register> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/rotary');
+                            Navigator.pushNamed(context, '/placements');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -156,11 +159,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           child: Text(
-                            'Rotary',
+                            'placements',
                             style: TextStyle(
-                                color: _isHovering[2]
-                                    ? Colors.pink
-                                    : Colors.orange,
+                                color: Colors.white,
                                 decoration:
                                 TextDecoration.underline,
                                 fontSize: 18.0,
@@ -170,7 +171,7 @@ class _RegisterState extends State<Register> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/board');
+                            Navigator.pushNamed(context, '/Company');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -178,11 +179,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           child: Text(
-                            'Board',
+                            'Company\ndetails',
                             style: TextStyle(
-                                color: _isHovering[3]
-                                    ? Colors.pink
-                                    : Colors.orange,
+                                color:Colors.white,
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600),
                           ),
@@ -201,9 +200,7 @@ class _RegisterState extends State<Register> {
                           child: Text(
                             'Contact Us',
                             style: TextStyle(
-                                color: _isHovering[4]
-                                    ? Colors.pink
-                                    : Colors.orange,
+                                color: Colors.white,
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.w600),
                           ),
@@ -256,9 +253,9 @@ class _RegisterState extends State<Register> {
             DrawerHeader(
               child: Column(
                 children: [
-                  Image.asset('assets/title_logo.png',
+                  Image.asset('',
                       height: 120.0, width: 250.0, scale: 0.1),
-                  Text('Rotaract Club of BIT'),
+                  Text('waaa'),
                 ],
               ),
               decoration: BoxDecoration(
@@ -359,9 +356,9 @@ class _RegisterState extends State<Register> {
           Center(
             child: Opacity(
               opacity: 0.4,
-              child: themeChange.darkTheme
-                  ? Image.asset('rcbit_logo.png')
-                  : Image.asset('blue_rcbit_logo.png'),
+              // child: themeChange.darkTheme
+              //     ? Image.asset('rcbit_logo.png')
+              //     : Image.asset('blue_rcbit_logo.png'),
             ),
           ),
           SingleChildScrollView(
@@ -374,23 +371,23 @@ class _RegisterState extends State<Register> {
                     children: [
                       Container(
                         height: isScreenSmall
-                            ? screenSize.height * 0.3
-                            : screenSize.height * 0.45,
+                            ? screenSize.height * 0.40
+                            : screenSize.height * 0.001,
                         width: screenSize.width,
-                        child: Image.asset(
-                            themeChange.darkTheme
-                                ? 'celeberation_image.webp'
-                                : 'celeberation_image_orange.webp',
-                            fit: isScreenSmall
-                                ? BoxFit.fill
-                                : BoxFit.cover),
+                        // child: Image.asset(
+                        //     themeChange.darkTheme
+                        //         ? 'celeberation_image.webp'
+                        //         : 'celeberation_image_orange.webp',
+                        //     fit: isScreenSmall
+                        //         ? BoxFit.fill
+                        //         : BoxFit.cover),
                       )
                     ],
                   ),
                   isScreenSmall
                       ? _isLoading
                       ? Container(
-                    height: MediaQuery.of(context).size.height,
+                    height: MediaQuery.of(context).size.height*0.01,
                     width: MediaQuery.of(context).size.width,
                     child: Center(
                       child: SpinKitRing(

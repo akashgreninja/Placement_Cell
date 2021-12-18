@@ -130,7 +130,7 @@ class _Contact_usState extends State<Contact_us> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/events');
+                            Navigator.pushNamed(context, '/Facilities');
                           },
                           onHover: (ishoverd) {
                             setState(() {

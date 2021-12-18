@@ -61,7 +61,7 @@ class _SignInState extends State<SignIn> {
       // extendBodyBehindAppBar: true,
       appBar: isScreenSmall?
       AppBar(
-        title: Image.asset('title_logo.png',
+        title: Image.asset('bitlogo.png',
           fit: BoxFit.contain,
           height: screenSize.height*0.08,),
         backgroundColor: Colors.grey.withOpacity(_opacity),
@@ -72,14 +72,24 @@ class _SignInState extends State<SignIn> {
           padding: EdgeInsets.only(top:8.0),
           child: Card(
             elevation: 10,
-            color: Colors.grey[900].withOpacity(_opacity),
+            // color: Colors.grey[900].withOpacity(_opacity),
             child: Container(
-              color: Colors.grey[900].withOpacity(_opacity),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end:Alignment.centerRight,
+                    colors: [
+                      Color.fromRGBO(0, 0, 0, 0.9),
+                      Color.fromRGBO(42, 42, 114,0.9 ),
+                    ]
+                ),
+              ),
+
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical:0, horizontal: screenSize.width*0.1),
                 child: Row(
                   children: [
-                    Image.asset('title_logo.png',
+                    Image.asset('bitlogo.png',
                         height: 250.0),
                     Expanded(
                       child: Row(
@@ -97,7 +107,7 @@ class _SignInState extends State<SignIn> {
                             child: Text(
                               'Home',
                               style: TextStyle(
-                                  color: _isHovering[0]?Colors.pink:Colors.orange,
+                                  color: Colors.white,
                                   fontFamily: 'Montserrat',
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w600,
@@ -108,7 +118,7 @@ class _SignInState extends State<SignIn> {
                           SizedBox(width: screenSize.width/20),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/events');
+                              Navigator.pushNamed(context, '/Facilities');
                             },
                             onHover: (ishoverd) {
                               setState(() {
@@ -116,9 +126,9 @@ class _SignInState extends State<SignIn> {
                               });
                             },
                             child: Text(
-                              'Events',
+                              'Facilities',
                               style: TextStyle(
-                                  color: _isHovering[1]?Colors.pink:Colors.orange,
+                                  color: Colors.white,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w600
                               ),
@@ -127,7 +137,7 @@ class _SignInState extends State<SignIn> {
                           SizedBox(width: screenSize.width/20),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/rotary');
+                              Navigator.pushNamed(context, '/Placements');
                             },
                             onHover: (ishoverd) {
                               setState(() {
@@ -135,9 +145,9 @@ class _SignInState extends State<SignIn> {
                               });
                             },
                             child: Text(
-                              'Rotary',
+                              'Placements',
                               style: TextStyle(
-                                  color: _isHovering[2]?Colors.pink:Colors.orange,
+                                  color: Colors.white,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w600
                               ),
@@ -146,7 +156,7 @@ class _SignInState extends State<SignIn> {
                           SizedBox(width: screenSize.width/20),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/board');
+                              Navigator.pushNamed(context, '/Company');
                             },
                             onHover: (ishoverd) {
                               setState(() {
@@ -154,9 +164,9 @@ class _SignInState extends State<SignIn> {
                               });
                             },
                             child: Text(
-                              'Board',
+                              'Company\nDetails',
                               style: TextStyle(
-                                  color: _isHovering[3]?Colors.pink:Colors.orange,
+                                  color:Colors.white,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w600
                                 //decoration: TextDecoration.underline
@@ -176,7 +186,7 @@ class _SignInState extends State<SignIn> {
                             child: Text(
                               'Contact Us',
                               style: TextStyle(
-                                  color: _isHovering[4]?Colors.pink:Colors.orange,
+                                  color:Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18.0
                               ),
@@ -202,13 +212,13 @@ class _SignInState extends State<SignIn> {
                         ),),
                     ),
                     SizedBox(width: screenSize.width*0.01),
-                    IconButton(
-                      icon: Icon(Icons.brightness_medium,
-                          color: themeChange.darkTheme?Colors.white:Colors.grey[400]),
-                      onPressed: (){
-                        themeChange.darkTheme = !themeChange.darkTheme;
-                      },
-                    )
+                    // IconButton(
+                    //   icon: Icon(Icons.brightness_medium,
+                    //       color: themeChange.darkTheme?Colors.white:Colors.grey[400]),
+                    //   onPressed: (){
+                    //     themeChange.darkTheme = !themeChange.darkTheme;
+                    //   },
+                    // )
                   ],
                 ),
               ),
@@ -224,11 +234,11 @@ class _SignInState extends State<SignIn> {
             DrawerHeader(
               child: Column(
                 children: [
-                  Image.asset('assets/title_logo.png',
+                  Image.asset('bitlogo.png',
                       height: 120.0,
                       width: 250.0,
                       scale: 0.1),
-                  Text('Rotaract Club of BIT'),
+                  Text('Placement cell of BIT'),
                 ],
               ),
               decoration: BoxDecoration(
@@ -318,12 +328,12 @@ class _SignInState extends State<SignIn> {
 
       body: Stack(
         children: [
-          Center(
-            child: Opacity(
-              opacity: 0.4,
-              child: themeChange.darkTheme?Image.asset('rcbit_logo.png'):Image.asset('blue_rcbit_logo.png'),
-            ),
-          ),
+          // Center(
+          //   child: Opacity(
+          //     opacity: 0.4,
+          //     child: themeChange.darkTheme?Image.asset('rcbit_logo.png'):Image.asset('blue_rcbit_logo.png'),
+          //   ),
+          // ),
           SingleChildScrollView(
             controller: _scrollController,
             child: Container(
@@ -333,14 +343,14 @@ class _SignInState extends State<SignIn> {
                   Container(
                     child: SizedBox(
                       width: screenSize.width,
-                      height: isScreenSmall?screenSize.height*0.3:screenSize.height*0.45,
-                      child: Image.asset(themeChange.darkTheme?'celeberation_image.webp':'celeberation_image_orange.webp',
-                          fit: isScreenSmall?BoxFit.fill:BoxFit.cover),
+                      height: isScreenSmall?screenSize.height*0.3:screenSize.height*0.30,
+                      // child: Image.asset(themeChange.darkTheme?'celeberation_image.webp':'celeberation_image_orange.webp',
+                      //     fit: isScreenSmall?BoxFit.fill:BoxFit.cover),
                     ),
                   ),
-                  Container(height: screenSize.height*0.19,
-                      child: Image.asset('title_logo.png')),
-                  SizedBox(height: screenSize.height*0.01,),
+                  // Container(height: screenSize.height*0.19,
+                      // child: Image.asset('title_logo.png')),
+                  SizedBox(height: screenSize.height*0.01),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: isScreenSmall?16:screenSize.height*0.8),
                     child: _isLoading?Container(
@@ -412,6 +422,7 @@ class _SignInState extends State<SignIn> {
                             obscureText: true,
                             autovalidate: false,
                           ),
+                          SizedBox(height: 10,),
                           Center(
                             child: RaisedButton(
                               color: Theme.of(context).buttonColor,

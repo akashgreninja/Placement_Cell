@@ -6,12 +6,12 @@ import 'package:placement_original/services/Database.dart';
 import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Rotary extends StatefulWidget {
+class Placements extends StatefulWidget {
   @override
-  _RotaryState createState() => _RotaryState();
+  _PlacementsState createState() => _PlacementsState();
 }
 
-class _RotaryState extends State<Rotary> {
+class _PlacementsState extends State<Placements> {
   ScrollController _scrollController;
   double _opacity = 0;
   double _scrollPosition = 0;
@@ -147,7 +147,7 @@ class _RotaryState extends State<Rotary> {
                           SizedBox(width: screenSize.width / 20),
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, '/Placements');
+                              Navigator.pushNamed(context, '/Facilities');
                             },
                             onHover: (ishoverd) {
                               setState(() {

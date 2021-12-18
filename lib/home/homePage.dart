@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/events');
+                            Navigator.pushNamed(context, '/Facilities');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Placements');
+                            Navigator.pushNamed(context, '/Facilities');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -329,15 +329,15 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                   SizedBox(width: screenSize.width * 0.01),
-                  IconButton(
-                    icon: Icon(Icons.brightness_medium,
-                        color: themeChange.darkTheme
-                            ? Colors.white
-                            : Colors.grey[400]),
-                    onPressed: () {
-                      themeChange.darkTheme = !themeChange.darkTheme;
-                    },
-                  )
+                  // IconButton(
+                  //   icon: Icon(Icons.brightness_medium,
+                  //       color: themeChange.darkTheme
+                  //           ? Colors.white
+                  //           : Colors.grey[400]),
+                  //   onPressed: () {
+                  //     themeChange.darkTheme = !themeChange.darkTheme;
+                  //   },
+                  // )
                 ],
               ),
             ),
@@ -455,7 +455,7 @@ class _HomePageState extends State<HomePage> {
             child: Opacity(
               opacity: 0.4,
 
-              child: Image.asset('college.jpg')
+              child: Image.asset('college2.jpg',height: 1000,width: 750, )
 
             ),
           ),
@@ -473,11 +473,9 @@ class _HomePageState extends State<HomePage> {
                           height: isScreenSmall
                               ? screenSize.height * 0.1
                               : screenSize.height * 0.1,
-                          //child: Image.asset(
-                              //themeChange.darkTheme
-                                  //? 'celeberation_image.webp'
-                                 // : 'celeberation_image_orange.webp',
-                              //fit: isScreenSmall ? BoxFit.fill : BoxFit.cover),
+                          // child: Image.asset('college2.jpg'
+                          //     ,
+                          //     fit: isScreenSmall ? BoxFit.fill : BoxFit.cover),
                         ),
                       ),
                     ],
@@ -769,7 +767,7 @@ class _HomePageState extends State<HomePage> {
                                 SizedBox(
                                   child:
                                   Image.asset(
-                                    'rotary_pres.jpg',
+                                    '',
                                     height: screenSize.height * 0.1,
                                     width: screenSize.width * 0.2,
                                     fit: BoxFit.cover,
@@ -779,14 +777,18 @@ class _HomePageState extends State<HomePage> {
 
                                 Padding(
                                   padding:  EdgeInsets.all(40.0),
-                                  child: Container(
+                                  child:
+                                  Container(
                                     // color: themeChange.darkTheme
                                     //     ? Colors.blue
                                     //     : Colors.orange,
                                     width: screenSize.width * 0.2,
                                     height: screenSize.height * 0.1,
 
-                                    child: Center(
+
+
+                                    child:
+                                    Center(
                                       child: Text(
                                         'avinash',
                                         textAlign: TextAlign.start,

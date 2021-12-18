@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             routes: {
               '/': (context) => HomePage(),
-              '/Placements': (context) => Rotary(),
+              '/Placements': (context) => Placements(),
               '/Facilities': (context) => Facilities(),
               '/Company': (context) => Company(),
               '/contact_us': (context) => Contact_us(),

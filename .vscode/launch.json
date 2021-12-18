@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Placement_cell",
+            "name": "Placement cell",
             "request": "launch",
             "type": "dart"
         }
