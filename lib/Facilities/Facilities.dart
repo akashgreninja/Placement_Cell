@@ -154,7 +154,7 @@ class _FacilitiesState extends State<Facilities> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Facilities');
+                            Navigator.pushNamed(context, '/Placements');
                           },
                           onHover: (ishoverd) {
                             setState(() {

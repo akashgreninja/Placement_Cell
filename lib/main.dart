@@ -7,9 +7,9 @@ import 'package:placement_original/Board/Company.dart';
 import 'package:placement_original/Contact/Contact_us.dart';
 import 'package:placement_original/DashBoard/dashboard.dart';
 import 'package:placement_original/Facilities/Facilities.dart';
-import 'package:placement_original/Register/cybersec.dart';
+
 import 'package:placement_original/Register/logIn.dart';
-import 'package:placement_original/Register/razorpayWeb.dart';
+
 import 'package:placement_original/Rotary/Placements.dart';
 import 'package:placement_original/Rotary/prism.dart';
 import 'package:placement_original/home/Home.dart';
@@ -64,8 +64,6 @@ class _MyAppState extends State<MyApp> {
               '/login': (context) => SignIn(),
               '/dashboard': (context) => DashBoard(),
 
-              '/payment': (context) => RazorPayWeb(),
-               '/cybersec': (context) => CyberSec(),
               '/Stats':(context) =>Stats(),
             },
             initialRoute: '/',

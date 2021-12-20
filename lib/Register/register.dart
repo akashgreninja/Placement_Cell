@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:placement_original/DashBoard/dashboard.dart';
 import 'package:placement_original/Loading/loading.dart';
-import 'package:placement_original/Register/razorpayWeb.dart';
 import 'package:placement_original/footer.dart';
 import 'package:placement_original/services/Database.dart';
 import 'package:placement_original/services/sharedPref.dart';
@@ -48,7 +47,7 @@ class _RegisterState extends State<Register> {
 
   String name = "";
   String email = "";
-  String usn = "";
+  String company = "";
   String phone = "";
   String conf_phone = "";
   String registeration_id = "";
@@ -95,10 +94,10 @@ class _RegisterState extends State<Register> {
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(0, 0, 0, 0.9),
-                  Color.fromRGBO(42, 42, 114,0.9 ),
-                ]
+                  colors: [
+                    Color.fromRGBO(0, 0, 0, 0.9),
+                    Color.fromRGBO(42, 42, 114,0.9 ),
+                  ]
               ),
             ),
             child: Padding(
@@ -418,7 +417,7 @@ class _RegisterState extends State<Register> {
                         CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Rtr. $name, Welcome to Rotaract Family. Your application id is :\n",
+                            "mr/mrs. $name, Welcome to B.I.T. placementcell. Your application id is :\n",
                             style: TextStyle(
                                 fontSize: 20),
                           ),
@@ -676,7 +675,7 @@ class _RegisterState extends State<Register> {
                                 0.08,
                           ),
                           Text(
-                            'USN (1st Year students write \'NA\')',
+                            'enter the details of the company',
                             style: GoogleFonts
                                 .montserrat(
                                 fontSize: 24),
@@ -688,11 +687,11 @@ class _RegisterState extends State<Register> {
                             decoration:
                             InputDecoration(
                               hintText:
-                              'Enter your University Serial number',
+                              'Enter company name and address',
                             ),
                             onChanged: (val) {
                               setState(() {
-                                usn = val;
+                                company = val;
                               });
                             },
                             validator: (val) => val
@@ -788,24 +787,24 @@ class _RegisterState extends State<Register> {
                                         print(name);
                                         Navigator.pushNamed(
                                             context,
-                                            '/payment',
+                                            '/',
                                             arguments: {
-                                              'name': name,
-                                              'email':
-                                              email,
-                                              'phone':
-                                              phone,
-                                              'usn': usn,
+                                              //      'name': name,
+                                              //    'email':
+                                              //  email,
+                                              // 'phone':
+                                              // phone,
+                                              //'company_details': company,
                                             });
                                       }
                                     },
                                     // onPressed: () async {
                                     //   if(_formKey.currentState.validate()){
-                                    //     dynamic res = await Database(name, phone, email, usn,password, "").register();
+                                    //     dynamic res = await Database(name, phone, email, company,password, "").register();
                                     //     setState(() {
                                     //       _isLoading = true;
                                     //     });
-
+                                    //
                                     //     if(res == null){
                                     //       setState(() {
                                     //         _isLoading=false;
@@ -1132,7 +1131,7 @@ class _RegisterState extends State<Register> {
                             ),
                             onChanged: (val) {
                               setState(() {
-                                usn = val;
+                                company = val;
                               });
                             },
                             validator: (val) => val
@@ -1221,59 +1220,59 @@ class _RegisterState extends State<Register> {
                                         : Colors
                                         .blue),
                               ),
-                              elevation: 2,
-                              onPressed: () {
-                                if (_formKey
-                                    .currentState
+                              //  elevation: 2,
+                              // onPressed: () {
+                              //   if (_formKey
+                              //       .currentState
+                              //       .validate()) {
+                              //     Navigator.pushNamed(
+                              //         context,
+                              //         '/',
+                              //         arguments: {
+                              //           'name': name,
+                              //           'email':
+                              //           email,
+                              //           'phone':
+                              //           phone,
+                              //           'company_details': company,
+                              //         });
+
+
+                              onPressed: () async {
+                                if (_formKey.currentState
                                     .validate()) {
-                                  Navigator.pushNamed(
-                                      context,
-                                      '/payment',
-                                      arguments: {
-                                        'name': name,
-                                        'email':
-                                        email,
-                                        'phone':
-                                        phone,
-                                        'usn': usn,
-                                      });
+                                  dynamic res =
+                                  await Database(
+                                      name,
+                                      phone,
+                                      email,
+                                      company,
+                                      password,
+                                      "")
+                                      .register();
+                                  setState(() {
+                                    _isLoading = true;
+                                  });
+
+                                 // if (res == null) {
+                                 //    print("error");
+                                 //     setState(() {
+                                 //      _isLoading = false;
+                                 //      _hasError = true;
+                                 //      _isDone = false;
+                                 //    });
+                                 //  } else {
+                                     print(res.toString());
+                                 //    registeration_id = res
+                                 //        .toString()
+                                 //        .split('/')[1]
+                                 //        .substring(0, 20);
+                                 //    _isDone = true;
+                                 //    _hasError = false;
+                                 //    _isLoading = false;
+                                 //  }
                                 }
                               },
-                              // onPressed: () async {
-                              //   if (_formKey.currentState
-                              //       .validate()) {
-                              //     dynamic res =
-                              //         await Database(
-                              //                 name,
-                              //                 phone,
-                              //                 email,
-                              //                 usn,
-                              //                 password,
-                              //                 "")
-                              //             .register();
-                              //     setState(() {
-                              //       _isLoading = true;
-                              //     });
-
-                              //     if (res == null) {
-                              //       print("error");
-                              //       setState(() {
-                              //         _isLoading = false;
-                              //         _hasError = true;
-                              //         _isDone = false;
-                              //       });
-                              //     } else {
-                              //       print(res.toString());
-                              //       registeration_id = res
-                              //           .toString()
-                              //           .split('/')[1]
-                              //           .substring(0, 20);
-                              //       _isDone = true;
-                              //       _hasError = false;
-                              //       _isLoading = false;
-                              //     }
-                              //   }
-                              // },
                             ),
                           )
                         ],

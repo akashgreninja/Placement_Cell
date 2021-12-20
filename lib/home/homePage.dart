@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Facilities');
+                            Navigator.pushNamed(context, '/Placements');
                           },
                           onHover: (ishoverd) {
                             setState(() {
@@ -289,8 +289,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       InkWell(
                         onTap: () {
-                          _launchURL(
-                              'https://rzp.io/l/rotaractRegistration');
+                          Navigator.pushNamed(context, '/register');
                         },
                         onHover: (val) {
                           setState(() {

@@ -155,7 +155,7 @@ class _CompanyState extends State<Company> {
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, '/Facilities');
+                            Navigator.pushNamed(context, '/Placements');
                           },
                           onHover: (ishoverd) {
                             setState(() {
