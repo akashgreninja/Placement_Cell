@@ -7,7 +7,7 @@ import 'package:placement_original/Board/Company.dart';
 import 'package:placement_original/Contact/Contact_us.dart';
 import 'package:placement_original/DashBoard/dashboard.dart';
 import 'package:placement_original/Facilities/Facilities.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:placement_original/Register/logIn.dart';
 
 import 'package:placement_original/Rotary/Placements.dart';
