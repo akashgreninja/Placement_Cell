@@ -122,9 +122,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
+
             child: Padding(
               padding: EdgeInsets.symmetric(
                   vertical: 0, horizontal: screenSize.width * 0.1),
+
               child: Row(
                 children: [
                   Image.asset('bitlogo.png', height: 250.0),
@@ -287,6 +289,8 @@ class _HomePageState extends State<HomePage> {
                   )
                       : Row(
                     children: [
+
+
                       InkWell(
                         onTap: () {
                           Navigator.pushNamed(context, '/register');
@@ -296,6 +300,8 @@ class _HomePageState extends State<HomePage> {
                             _isHovering[5] = val;
                           });
                         },
+
+
                         child: Text(
                           "Register",
                           style: GoogleFonts.openSans(
@@ -306,6 +312,9 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 17),
                         ),
                       ),
+
+
+
                       SizedBox(
                         width: screenSize.width * 0.01,
                       ),

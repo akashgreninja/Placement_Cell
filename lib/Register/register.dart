@@ -285,46 +285,21 @@ class _RegisterState extends State<Register> {
                     children: [
                       InkWell(
                         onTap: () {
-                          _launchURL(
-                              'https://rzp.io/l/rotaractRegistration');
+                          Navigator.pushNamed(context, '/register');
                         },
                         onHover: (val) {
                           setState(() {
                             _isHovering[5] = val;
                           });
                         },
-                        child: Text(
-                          "Register",
+                        child: Text("Register",
                           style: GoogleFonts.openSans(
                               fontWeight: FontWeight.w400,
-                              color: _isHovering[5]
-                                  ? Colors.pink
-                                  : Colors.orange,
-                              fontSize: 17),
-                        ),
+                              color: _isHovering[5]?Colors.pink:Colors.orange,
+                              fontSize: 17
+                          ),),
                       ),
-                      SizedBox(
-                        width: screenSize.width * 0.01,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/login');
-                        },
-                        onHover: (val) {
-                          setState(() {
-                            _isHovering[6] = val;
-                          });
-                        },
-                        child: Text(
-                          "Log In",
-                          style: GoogleFonts.openSans(
-                              fontWeight: FontWeight.w400,
-                              color: _isHovering[6]
-                                  ? Colors.pink
-                                  : Colors.orange,
-                              fontSize: 17),
-                        ),
-                      ),
+                      SizedBox(width: screenSize.width*0.01),
                     ],
                   ),
                   SizedBox(width: screenSize.width * 0.01),
@@ -558,10 +533,10 @@ class _RegisterState extends State<Register> {
                                 ),
                                 validator: (phno) {
                                   if(phno.isEmpty){
-                                    return "proper usn is Required";
+                                    return "proper phno  is Required";
                                   }
                                   if(phno.length !=  10){
-                                    return 'invalid Usn';
+                                    return 'invalid phno';
                                   }
                                   return null;
                                 },
@@ -599,10 +574,10 @@ class _RegisterState extends State<Register> {
                                 ),
                                 validator: (usn) {
                                   if(usn.isEmpty){
-                                    return "proper phone number is Required";
+                                    return "proper usn is Required";
                                   }
                                   if(usn.length !=  10){
-                                    return 'invalid phno';
+                                    return 'invalid usn';
                                   }
                                   return null;
 

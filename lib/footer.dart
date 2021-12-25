@@ -60,7 +60,7 @@ class _FooterState extends State<Footer> {
                   width: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('https://www.youtube.com/watch?v=ZUj6k5LQrJ0');
+                  _launchURL('https://www.instagram.com/bitsince1979/');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -74,7 +74,7 @@ class _FooterState extends State<Footer> {
                   height: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('https://www.linkedin.com/company/rotaractclubofbit/');
+                  _launchURL('https://www.linkedin.com/school/bitsince1979/?originalSubdomain=in');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -88,7 +88,7 @@ class _FooterState extends State<Footer> {
                   height: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('mailto:bitrotaract@gmail.com');
+                  _launchURL('mailto: principalbit4@gmail.com,');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -102,7 +102,7 @@ class _FooterState extends State<Footer> {
                   height: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('https://twitter.com/RotaractBIT?s=08');
+                  _launchURL('https://twitter.com/bitsince1979');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -116,7 +116,7 @@ class _FooterState extends State<Footer> {
                   height: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('https://www.facebook.com/rtctbit');
+                  _launchURL('https://www.facebook.com/bitsince1979');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -162,7 +162,7 @@ class _FooterState extends State<Footer> {
                   width: screenSize.height*0.05,
                 ),
                 onTap: () {
-                  _launchURL('https://www.instagram.com/rotaractclubofbit/');
+                  _launchURL('https://www.instagram.com/bitsince1979/');
                 },
                 hoverColor: Colors.transparent,
               ),
@@ -222,9 +222,9 @@ class _FooterState extends State<Footer> {
                 },
                 hoverColor: Colors.transparent,
               ),
-              SizedBox(
-                width: screenSize.width*0.02,
-              )
+              // SizedBox(
+              //   width: screenSize.width*0.02,
+              // )
               // InkWell(
               //   child: Container(
               //     child: Image.network('https://www.freepnglogos.com/download/2261',
@@ -232,13 +232,13 @@ class _FooterState extends State<Footer> {
               //     height: screenSize.height*0.05,
               //   ),
               //   onTap: () {
-              //     _launchURL('https://instagram.com');
+              //     _launchURL('');
               //   },
               //   hoverColor: Colors.transparent,
               // ),
-              // SizedBox(
-              //   width: screenSize.width*0.02,
-              // )
+              SizedBox(
+                width: screenSize.width*0.02,
+              )
             ],
           )
         ],

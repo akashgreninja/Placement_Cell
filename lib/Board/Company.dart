@@ -1,3 +1,4 @@
+import 'package:expansion_card/expansion_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -5,7 +6,9 @@ import 'package:placement_original/footer.dart';
 import 'package:placement_original/services/Database.dart';
 import 'package:placement_original/services/sharedPref.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:flutter_search_bar/flutter_search_bar.dart';
+import 'package:expandable/expandable.dart';
+import 'package:expansion_card/expansion_card.dart';
 
 class Company extends StatefulWidget {
 
@@ -35,6 +38,9 @@ class _CompanyState extends State<Company> {
       throw 'Could not launch $url';
     }
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -830,7 +836,122 @@ class _CompanyState extends State<Company> {
                   //     ),
                   //   ),
                   // ),
-                  Footer()
+                    Row(
+
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+
+
+
+                        InkWell(
+
+
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 10, 0,0),
+                            child: Card(
+                              elevation: 20.0,
+                              // shadowColor: themeChange.darkTheme
+                              //     ? Colors.blue
+                              //     : Colors.orange,
+                              child: Row(
+                                children: [
+
+                                  SizedBox(
+                                    child:Image.asset(
+                                      "info.png",
+
+
+                                      height: screenSize.height * 0.20,
+                                      width: screenSize.width * 0.2,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  SizedBox(height: 10,),
+
+
+                                    Container(
+                                      // color: themeChange.darkTheme
+                                      //     ? Colors.blue
+                                      //     : Colors.orange,
+                                      width: screenSize.width * 0.2,
+                                      height: screenSize.height * 0.1,
+
+
+
+                                      child:
+                                      Center(
+                                        child: Text(
+                                          'INFOSYS',
+                                          textAlign: TextAlign.start,
+                                          style: GoogleFonts.monda(
+                                              fontSize: 22.0,
+                                              color: themeChange.darkTheme
+                                                  ? Colors.white
+                                                  : Colors.grey[900]),
+                                        ),
+                                      ),
+                                    ),
+
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+
+                    children: [
+
+                         Expanded(
+                         
+                          child: ExpansionCard(
+                            title: Row(
+                            children: [
+                              Text("heeeeeeee"),
+                            ],
+                            ),
+                            onExpansionChanged: (onExpand){
+                              if(onExpand == true){
+                                setState(() {
+                                  color:Colors.grey;
+                                });
+
+                              }else{
+                                setState(() {
+                                  color:Colors.white;
+                                });
+                              }
+                            },
+
+                          ),
+                          
+                        ),
+
+                    ],
+
+                  ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Footer()
                 ],
               ),
             ),
