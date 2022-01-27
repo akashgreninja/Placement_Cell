@@ -1,0 +1,86 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:placement_original/Board/Company.dart';
+import 'package:placement_original/Contact/Contact_us.dart';
+import 'package:placement_original/Facilities/Facilities.dart';
+import 'package:placement_original/Register/logIn.dart';
+import 'package:placement_original/placement/Placements.dart';
+import 'package:placement_original/home/homePage.dart';
+import 'package:placement_original/Register/register.dart';
+import 'package:placement_original/services/sharedPref.dart';
+import 'package:placement_original/services/styles.dart';
+import 'package:placement_original/home/Stats.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  DarkThemeProvider themeProvider = new DarkThemeProvider();
+
+  void getCurrentAppTheme() async {
+    themeProvider.darkTheme =
+        await themeProvider.darkThemePreference.getTheme();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentAppTheme();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) {
+        return themeProvider;
+      },
+      child: Consumer<DarkThemeProvider>(
+        builder: (BuildContext context, value, Widget child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            routes: {
+              '/': (context) => HomePage(),
+              '/Placements': (context) => Placements(),
+              '/Facilities': (context) => Facilities(),
+              '/Company': (context) => Company(),
+              '/contact_us': (context) => Contact_us(),
+              '/register': (context) => Register(),
+              '/login': (context) => SignIn(),
+
+
+
+              '/Stats':(context) =>Stats(),
+            },
+            initialRoute: '/',
+            title: 'Placement Cell Of Bit',
+            theme: Styles.themeData(themeProvider.darkTheme, context, true),
+          );
+        },
+      ),
+    );
+  }
+}
+
+Route<dynamic> _getRoute(RouteSettings settings) {
+  if (settings.name == '/foo') {
+
+  }
+
+  return null;
+}
+
+MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
+  return new MaterialPageRoute(
+    settings: settings,
+    builder: (ctx) => builder,
+  );
+}

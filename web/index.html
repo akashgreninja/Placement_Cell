@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Rotaract Club of Bangalore B.I.T. Website">
+  <meta name="google-site-verification" content="FPyCcFv7bOckGwT4fk9dsB_Z95xRwSBmfiOIvPUthAQ" />
+  <meta name="google-site-verification" content="J1nea-kDmf2-HHG_VeOl0VIB3d-emsoQWeTQKQdWfRU" />
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="rotaract_website">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+  <title>Placement cell of BIT.</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/init.js"></script>
+<script>
+    // Your web app's Firebase configuration
+   const firebaseConfig = {
+  apiKey: "AIzaSyApx74gaHo0BhPoAf5YhQU4LVlZr74pOwQ",
+  authDomain: "placement-cell-462a9.firebaseapp.com",
+  projectId: "placement-cell-462a9",
+  storageBucket: "placement-cell-462a9.appspot.com",
+  messagingSenderId: "113896236764",
+  appId: "1:113896236764:web:6ff2b2ade644f47e287619",
+  measurementId: "G-HMD1D5W6P5"
+};
+
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+     // firebase.analytics();
+  </script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+
+</html>
